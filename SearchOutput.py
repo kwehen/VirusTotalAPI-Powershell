@@ -3,6 +3,8 @@ file_path = "results.txt"
 search_string = "malicious=0"
 
 with open(file_path, "r") as file:
-    for line in file:
-        if search_string not in line:
-            print(line)
+    with open(output_file_path, "w") as output_file:
+        for line in file:
+            if search_string not in line:
+                output_file.write(line)
+                print(line)
